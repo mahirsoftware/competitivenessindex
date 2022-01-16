@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style type="text/css">
+
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: -100em;
+  vertical-align: middle;
+  horizontal-align: middle;
+  width: 80%;
+}
+.flex-container {
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+</style>
+
+<div class="flex-container" text-align="center">
+      <div class="container">
+
+        {% include "text/our_story.html" %}
+
+        {% include "text/our_story_timeline.html" %}
+
+      </div>
+</div>
+
+{% endblock content %}

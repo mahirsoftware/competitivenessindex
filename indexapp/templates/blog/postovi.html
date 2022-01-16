@@ -1,0 +1,43 @@
+{% load static %}
+
+
+    <!-- ***** Blog Area Start ***** -->
+    <section class="blog-area section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="mosh-blog-posts">
+                        <div class="row">
+
+                            <!-- Single Blog Start -->
+                            <div class="col-12">
+                                <p>{{page_title}}</p>
+                                {% for post in posts %}
+                                <div class="single-blog wow fadeInUp" data-wow-delay="0.1s">
+                                    <!-- Post Thumb -->
+                                    <div class="blog-post-thumb">
+                                        <img src="{{ post.slika.large.url}}" alt="">
+                                    </div>
+                                    <!-- Post Meta -->
+                                    <div class="post-meta">
+                                        <h6>By <a href="#">{{ post.author }} | {{ post.created_at }}</a></h6>
+                                    </div>
+                                    <!-- Post Title -->
+                                    <h2>{{ post.title }}</h2>
+                                    <!-- Post Excerpt -->
+                                    <p style="color:#383838">{{ post.content|slice:":200" }}</p>
+                                    <!-- Read More btn -->
+                                    <a href="{{ post.get_absolute_url }}">Read More</a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pagination Area Start -->
+                    <div class="mosh-pagination-area">
+                        <nav>
+                        {% include 'blog/pagination.html' with page=posts%}
+                        </nav>
+                    </div>
+                </div>
+            

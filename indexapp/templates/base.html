@@ -1,0 +1,86 @@
+{% load static %}
+{% include "parts/analytics.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        {% block bootsrap %}
+            {% load bootstrap4 %}
+ 
+            {# CSS Bootstrap #}
+            {% bootstrap_css %} 
+        {% endblock bootsrap %}
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Competitiveness index</title>
+    <!-- <title>Competitiveness index | Base</title> -->
+    
+    <!-- Favicon -->
+    <link rel="icon" href= "{% static 'img/core-img/logo_ci.svg' %}">
+
+    <!-- Core Stylesheet -->
+    <link href= "{% static 'style.css' %}" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href= "{% static 'css/responsive.css' %}" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+
+    {% include "home/header.html" %}
+
+{% block header_parent %}
+
+    <!-- ***** Breadcumb Area Start ***** -->
+    <div class="mosh-breadcumb-area" style="background-image: url('{% static "img/core-img/breadcumb.png" %}')";>                                                        
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumbContent">
+                        <h2>{{page_title}}</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"> {{page_title}} </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- ***** Breadcumb Area End ***** -->
+{% endblock %}
+
+
+    {% block content %}{% endblock %}
+
+    {% include "home/footer.html" %}
+
+
+    <!-- ***** Footer Area End ***** -->
+    <!-- jQuery-2.2.4 js -->
+    <script type="text/javascript" src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script type="text/javascript" src="{% static 'js/active.js' %}"></script>
+
+</body>
+
+</html>

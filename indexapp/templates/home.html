@@ -1,0 +1,68 @@
+{% load static %}
+{% include "parts/analytics.html" %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block bootsrap %}
+        {% load bootstrap4 %}
+
+        {# CSS Bootstrap #}
+        {% bootstrap_css %} 
+    {% endblock bootsrap %}
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Competitiveness index</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/core-img/logo_ci.svg' %}">
+
+    <!-- Core Stylesheet -->
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+     
+
+</head>
+
+<body>
+
+    {% include "home/header.html" %}
+
+    {% include "home/slider.html" %}
+
+    {% include "home/koraci.html" %}
+
+    {% include "home/software_features.html" %}
+
+    {% include "home/blog.html" %}
+
+    {% include "home/counter.html" %}
+
+    {% include "home/about.html" %}
+
+    {% include "home/talk_to_us.html" %}
+
+    {% include "home/footer.html" %}
+
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+</body>
+
+</html>

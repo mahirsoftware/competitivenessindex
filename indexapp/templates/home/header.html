@@ -1,0 +1,42 @@
+{% load static %}
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="mosh-preloader"></div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header_area">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <!-- Menu Area Start -->
+                <div class="col-12 h-100">
+                    <div class="menu_area h-100">
+                        <nav class="navbar h-100 navbar-expand-lg align-items-center">
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/core-img/logo_ci.svg' %}" alt="logo" width="50" height="60">Competitiveness index</a>
+
+                            <!-- Menu Area -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mosh-navbar" aria-controls="mosh-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                            <div class="collapse navbar-collapse justify-content-end" id="mosh-navbar">
+                                <ul class="navbar-nav animated" id="nav">
+                                    <li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'template' %}">Create template</a>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'rca' %}">RCA</a>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'gliit' %}">GLIIT</a>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'tfcc' %}">TFCC</a>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'ci' %}">CI</a>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'all' %}">All indexes</a>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->

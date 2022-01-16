@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+
+
+{% block content %}
+
+<style type="text/css">
+
+  .container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: -100em;
+    vertical-align: middle;
+    horizontal-align: middle;
+    width: 90%;
+  }
+  .flex-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    text-align: center;
+    width: 90%;
+  }
+
+  </style>
+
+<br/>
+
+<div class="flex-container" text-align="center">
+
+    <div class="container">
+
+      <br>
+
+      <h2>Fill the form to create template!</h2>
+    
+      <form method="post" novalidate >
+        {% csrf_token %}
+
+        {% for hidden_field in form.hidden_fields %}
+          {{ hidden_field }}
+        {% endfor %}
+
+        {% if form.non_field_errors %}
+          <div class="alert alert-danger" role="alert">
+            {% for error in form.non_field_errors %}
+              {{ error }}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% for field in form.visible_fields %}
+          <div class="form-group">
+            {{ field.label_tag }}
+
+            {% if form.is_bound %}
+              {% if field.errors %}
+                {% render_field field class="form-control is-invalid" %}
+                {% for error in field.errors %}
+                  <div class="invalid-feedback">
+                    {{ error }}
+                  </div>
+                {% endfor %}
+              {% else %}
+                {% render_field field class="form-control is-valid" %}
+              {% endif %}
+            {% else %}
+              {% render_field field class="form-control" %}
+            {% endif %}
+
+            {% if field.help_text %}
+              <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+          </div>
+        {% endfor %}
+        <p>Try create multiple templates and make sure that you find perfect one before you start entering data. Good luck!</p>
+        <button type="submit" class="btn btn-primary">Download your template!</button>
+      </form>
+      
+      <br><br>
+
+  </div>
+  <br/> 
+</div>
+
+<br/>
+<br/>
+
+
+{% endblock content %}

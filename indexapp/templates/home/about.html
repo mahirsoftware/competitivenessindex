@@ -1,0 +1,31 @@
+{% load static %}
+
+<link href= "{% static 'software/animate.min.css' %}" rel="stylesheet">
+
+<style>
+    #feature1 span
+    {
+        float: left;
+	}
+
+
+</style>
+
+        <br><br><br>
+		<!-- start feature1 -->
+		<section id="feature1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+						<img src="{% static 'img/bg-img/device_monitor_ci.png' %}" class="img-responsive" alt="feature img">
+					</div>
+					<div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+						<h2 class="text-uppercase">Our Story</h2>
+						<p>The story of the Competitiveness Index began long before software was born. Software is just a consequence of the work and discoveries of many scientists. It arose as a result of the need in the time era of big data and when technological solutions are available at every step. Go read more!</p>
+						<a href="{% url 'about' %}" class="btn mosh-btn">Read More</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end feature1 -->
+        <br><br><br>

@@ -1,0 +1,30 @@
+{% load static %}
+
+                <div class="col-12 col-md-4">
+                    <div class="mosh-blog-sidebar">
+
+                        <div class="latest-blog-posts mb-100">
+                            <h5>Latest Posts</h5>
+                            <!-- Single Latest Blog Post -->
+                            {% for post in latest_posts %}
+                            <div class="single-latest-blog-post d-flex">
+                                <div class="latest-blog-post-thumb">
+                                    <img src="{{ post.slika.thumbnail.url }}" alt="">
+                                </div>
+                                <div class="latest-blog-post-content">
+                                    <h6><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h6>
+                                    <div class="post-meta">
+                                        <h6>By <a href="#">{{ post.author }}</a>/<a href="#">{{ post.created_at}}</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                          
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Blog Area End ***** -->

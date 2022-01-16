@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block content %}
+    <!-- ***** Blog Area Start ***** -->
+    <section class="blog-area section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="mosh-blog-posts">
+                        <div class="row">
+                            <!-- Single Blog Start -->
+                            <div class="col-12">
+                                <div class="single-blog wow fadeInUp" data-wow-delay="0.1s">
+                                    <!-- Post Thumb -->
+                                    <div class="blog-post-thumb">
+                                        <img src="{{ post.slika.large.url }}" alt="">
+                                    </div>
+                                    <!-- Post Meta -->
+                                    <div class="post-meta">
+                                        <h6>By <a href="#">{{ post.author }}</a> | {{ post.created_at }}</h6>
+                                    </div>
+                                    <!-- Post Title -->
+                                    <h2>{{ post.title }}</h2>
+                                    <!-- Post Excerpt -->
+                                    <p style="color:#383838">{{ post.content|linebreaks }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include "blog/sidebar.html" %}
+                
+    {% endblock content %}
